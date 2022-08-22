@@ -246,7 +246,7 @@ app.post('/signin', (req, res) => {
             if (err) {
                 res.send({ err: err })
             }
-            if (result?.length > 0) {
+            else if (result?.length > 0) {
                 bcrypt.compare(password, result[0].password, (error, response) => {
                     if (error)
                         console.log(error)
